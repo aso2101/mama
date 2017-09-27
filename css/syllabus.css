@@ -1,0 +1,113 @@
+.san-Deva { font-family: "Murty Sanskrit";font-size:125%; }
+.san-Latn { font-family: "Junicode"; font-style:italic;font-size:125%; }
+.eng { font-family: sans-serif; }
+
+
+h1 { margin-bottom:15px; }
+h1 .eng { padding-top:15px; }
+h2 { margin-top:25px; }
+h3 { margin-top:5px; }
+.navbar-brand { padding:15px!important;font-size:200%!important; }
+.navbar-nav li { font-size:150%!important; }
+#footer { font-size:48pt!important; margin: 0 auto 20px auto; text-align:center; font-family:"Printers Ornaments"; padding-top:100px;}
+.hanging-indent {
+  text-indent:-20px;
+  padding-left:20px;
+}
+a:hover { text-decoration:none; }
+p + p { margin-top:20px!important; }
+.root .san-Deva:before, .root .san-Latn:before {
+  content:"√";
+}
+/* custom options for popovers in the vocabular lists */
+.popover-title { display: none; }
+.popover-content { font-size:150%; }
+.vocabulary .san-Deva,
+.vocabulary .san-Latn { font-size:200%; }
+.vocabulary dt .san-Deva { padding:7px; }
+.vocabulary dd .san-Latn { font-size:150%; }
+.vocabulary dd:last-child {padding-bottom:10px;border-bottom:solid 1px #ccc;}
+.vocabulary .meaning { font-size:150%;font-weight:bold;padding-top:5px;margin-bottom:0;}
+.vocabulary .meaning .wordform {font-weight:normal;}
+.vocabulary .meaning .wordform:before {content:"(";}
+.vocabulary .meaning .wordform:after {content:")";}
+.vocabulary dt a {
+  text-decoration:none!important;
+}
+body {
+  font-family: sans-serif;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  font-size:1.75em;
+  padding-top: 50px; 
+}
+*[id]:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -50px; 
+  height: 50px; 
+  visibility: hidden; 
+}
+.printorn {
+  font-family: "Printers Ornaments";
+  text-align:center;
+  width:100px;
+  margin:0 auto;
+  padding:20px 0;
+  clear:both;
+  font-size:200%;
+}
+
+/* style for the checkboxes on the syllabus page */
+.checkbox label:after, 
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+.radio .cr {
+    border-radius: 50%;
+}
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
