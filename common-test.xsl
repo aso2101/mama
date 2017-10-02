@@ -131,6 +131,12 @@
       <xsl:apply-templates/>
     </xsl:element>    
   </xsl:template>
+  <xsl:template match="tei:lg" mode="in-modal">
+    <xsl:element name="div">
+      <xsl:attribute name="class">lg</xsl:attribute>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
   <xsl:template match="tei:text[@xml:id='RaMa']//tei:lg"/>
   <xsl:template match="tei:text[@xml:id='RaMa']//tei:lg" mode="bypass">
     <xsl:element name="span">
@@ -389,6 +395,9 @@
 	 the rasamañjarī will be divided into divisions
 	 that each have a @corresp attribute. !-->
     <xsl:for-each select="//tei:text[@xml:id='RaMa']//tei:div[@corresp]">
+      <xsl:variable name="corresp">
+	<xsl:value-of select="@corresp"/>
+      </xsl:variable>
       <xsl:variable name="reference">
 	<xsl:value-of select="translate(translate(@corresp,'ā','a'),'.','-')"/>
       </xsl:variable>
@@ -431,7 +440,7 @@
 		   to which this modal is attached. !-->
 	      <xsl:element name="div">
 		<xsl:attribute name="class">modal-quote san <xsl:value-of select="local-name()"/></xsl:attribute>
-		<xsl:apply-templates select="*[not(self::tei:note)]"/>
+		<xsl:apply-templates select="//tei:text[@xml:id='MāMā']//tei:*[@xml:id=$corresp]" mode="in-modal"/>
 	      </xsl:element>
 	      <!-- THE CONTENT OF EACH TAB !-->
 	      <xsl:apply-templates select="." mode="bypass"/>

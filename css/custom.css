@@ -77,11 +77,18 @@ a:hover{ text-decoration:none!important;}
 .foreign {
   font-style:italic;
 }
-/*
-.prakritword {
-  background: url(../images/HlfA2is.gif) bottom repeat-x;
+.modal-quote {
+  padding-left:3em;
+  font-size:120%!important;
+  color:#5cb85c!important;
+  padding-bottom:1em;
+  border-bottom: thin dashed #5cb85c;
+  margin-bottom:2em;
 }
-*/
+.modal-quote:after {
+    border: 0; 
+    height: 1px; 
+}
 .sanskritword {
   display:none;
   color:#777;
